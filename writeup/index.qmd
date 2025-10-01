@@ -1,5 +1,5 @@
 ---
-title: "Replication of Experiment 1 by Xiang, Vélez & Gershman (2023, Journal of Experimental Psychology: General)"
+title: "Replication of Experiment 1 by Xiang, Vélez & Gershman (2023, JEP:G)"
 author: "Jacob C. Zimmerman (j2zimmerman@ucsd.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
@@ -21,21 +21,17 @@ format:
 
 My broad research interests include modeling how individuals perceive, represent, and judge potential collaborators' affordances for collaboration. Xiang, Vélez & Gershman (2023) propose and empirically validate a probabilistic model in which recursively updated inferences of competence and effort ("belief–desire–competence framework"), together with observed outcomes, jointly predict individuals' judgments of collaborators, across various cognitive tasks which are common within collaboration. In particular, in Experiment 1, their model best predicts participants' judgments about whether joint activity will succeed, compared to plausible alternative models. I am eager to attempt to replicate this finding to help establish the robustness of this model of collaborator judgment, before I may attempt to extend it in future work.
 
-Experiment 1 involves observing avatars succeed, or fail, to lift a heavy box in a set of _contests_ (six total), each containing three _rounds_. In each contest, there are two unique avatars playing as the _contestants_. In rounds 1 and 2, each contestant attempts to lift the box by themselves. In round 3, the contestants attempt to lift the box together. Before and after each round, the participant judges the strength of each contestant (1–10). After each round, for each contestant which successfully lifted the box, the participant judges that contestant's allocated effort (0%–100%). Before rounds 2 and 3, the participant also judges each contestant's probability of lifting the box successfully (0%–100%), prior to observing the lift attempt(s) and making the strength and effort judgments. An incentive for lifting the box is specified in each round: in the second and third rounds, the specified reward for lifting the box is double that of the first round. Participants were told that the heavy box had a constant weight across all contests, which effectively requires 5 strength points (e.g., 100% effort for a contestant with strength 5, 50% effort for a contestant with strength 10, etc.).
+Experiment 1 involves observing contestants try to lift a heavy box in a set of _contests_ (six total), each containing three _rounds_. In each contest, there are two unique avatars playing as the _contestants_. In rounds 1 and 2, each contestant attempts to lift the box by themselves. In round 3, the contestants attempt to lift the box together. In each round, after observing each contestant succeed or fail to lift the box, the participant judges the strength of each contestant (1–10), and for each contestant that successfully lifted the box, the participant judges that contestant's allocated effort (0%–100%). At the start of round 2, the participant judges each contestant's probability of lifting the box successfully (0%–100%), prior to observing the lift attempts. At the start of round 3, the participant judges the probability that the contestants will successfully lift the box together. Further, an incentive to the contestants for lifting the box is specified in each round: in the second and third rounds, the specified reward for lifting the box is double that of the first round. Participants are also told that the heavy box had a constant weight across all contests, which effectively requires at least 5 strength points applied (e.g., on average, 100% effort for a contestant with strength 5, or 50% effort for a contestant with strength 10, etc.). Last, participants see a progressively filled-out table of all the lift outcomes during each contest, visible throughout, including when making judgments.
 
-<!--
-TODO:
-- [ ] verify that the sequence of judgments is correct! based on the code/actual task (also could make it read more simply by structuring it differently; verbosely is okay if needed, i.e. go through rounds 1-3 and for each describe what happens before and after)
-- [ ] ask Bria- should I be replicating what they actually did or what their methods say they did? slightly different, in that their methods don't specify that they have Ps rate strength before first round
-- [ ] add any more crucial details abt the procedure
-- [ ] describe and embed sample stimuli
-- [ ] **describe what the challenges will be for me**
-- [ ] revise for clarity, if time
--->
+![Example illustrations shown during instructions; note that the incentive displayed for round 1 is $10, not $20.](../original_code/competence_effort/Experiment/img/example1.png)
+
+![An example table for a contest, as it would appear during the probability judgment at the beginning of round 3.](../original_code/competence_effort/Experiment/img/table.png){height=350}
+
+The challenges/opportunities for my learning in this replication project will include getting acquainted with the `rwebppl` interface for probabilistic programming using WebPPL (with which I am familiar), running the paper's proposed and alternative computational models over my new collected data, and interpreting and comparing the models' results. I will also replace the original authors' data-saving step (a php page) with [DataPipe](https://pipe.jspsych.org/).
 
 ::: {.callout-note}
 ## Links
-Repository: https://github.com/jczimm/xiang2023  
+Repository: [https://github.com/jczimm/xiang2023](https://github.com/jczimm/xiang2023)  
 Original paper: [2023_xiang_effort.pdf](../original_paper/2023_xiang_effort.pdf) (Retrieved on Sep 30, 2025 from [velezlab.org](https://www.velezlab.org/publications#:~:text=Collaborative%20decision%20making%20is%20grounded%20in%20representations%20of%20other%20people%E2%80%99s%20competence%20and%20effort))
 :::
 

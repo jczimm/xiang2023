@@ -1,0 +1,8 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!original_code/"
+  resources:
+    - "original_code/competence_effort/Experiment/img/example1.png"
+    - "original_code/competence_effort/Experiment/img/table.png"
