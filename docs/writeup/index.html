@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob C. Zimmerman (j2zimmerman@ucsd.edu)">
-<meta name="dcterms.date" content="2025-10-12">
+<meta name="dcterms.date" content="2025-10-13">
 
 <title>Replication of Experiment 1 by Xiang, Vélez &amp; Gershman (2023, JEP:G)</title>
 <style>
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 12, 2025</p>
+      <p class="date">October 13, 2025</p>
     </div>
   </div>
   
@@ -166,7 +166,19 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>An example table for a contest, as it would appear during the probability judgment at the beginning of round 3.</figcaption>
 </figure>
 </div>
-<p>The challenges/opportunities for my learning in this replication project will include: 1) recreating the paper’s proposed (joint effort) model and two alternative (solitary/compensatory effort) models of the probability of joint success in <a href="https://github.com/kach/memo">Memo</a> (based on the authors’ pre-existing implementations in WebPPL), and 2) running these models over my newly collected data to attempt to replicate that the proposed model is most predictive of participants’ judgments. Specifically, I will attempt to replicate that: 2.1) when rounds 1 and 2 feature no individual success, participants still judge the probability of joint success in round 3 as non-zero, 2.2) participants judge higher probability of joint success as cases of individual success increases, and 2.3) the proposed model is the only model evaluated which predicts both of these patterns (see Figure 3C in original paper and accompanying explanation, pp.&nbsp;1570-1571). I will also replace the original authors’ data-saving step (a php page) with <a href="https://pipe.jspsych.org/">DataPipe</a>.</p>
+<p>The challenges/opportunities for my learning in this replication project will include: 1) recreating the paper’s proposed (joint effort) model and two alternative (solitary/compensatory effort) models of the probability of joint success in <a href="https://github.com/kach/memo">Memo</a> (based on the authors’ pre-existing implementations in WebPPL), and 2) running these models over my newly collected data to attempt to replicate that the proposed model is most predictive of participants’ judgments.</p>
+<p>Specifically, I will attempt to replicate that: 2.1) when rounds 1 and 2 feature no individual success, participants still judge the probability of joint success in round 3 as non-zero; 2.2) participants judge higher probability of joint success as cases of individual success increases; and 2.3) the proposed model is the only model evaluated which predicts both of these patterns (see Figure 3C in original paper and accompanying explanation, pp.&nbsp;1570-1571). Note that 2.2 and 2.3 are exploratory, as they are not statistically formalized and tested in Xiang2023. I will also replace the original authors’ data-saving step (a php page) with <a href="https://pipe.jspsych.org/">DataPipe</a>.</p>
+<!--
+the measure of interest: judged round 3 (joint success) probability ("participants believed that the lift probability for “F,F;F,F” was different from zero")
+
+maps onto construct: participant's internal estimate of joint success
+
+the estimate is reported (t value)
+estimation strategy: mean
+effect size not reported, but can be converted from t value
+
+variability: not reported in paper, but can estimate from the shared data
+-->
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
