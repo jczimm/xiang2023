@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob C. Zimmerman (j2zimmerman@ucsd.edu)">
-<meta name="dcterms.date" content="2025-10-13">
+<meta name="dcterms.date" content="2025-10-24">
 
 <title>Replication of Experiment 1 by Xiang, Vélez &amp; Gershman (2023, JEP:G)</title>
 <style>
@@ -94,6 +94,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
   <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis Plan</a></li>
   <li><a href="#differences-from-original-study" id="toc-differences-from-original-study" class="nav-link" data-scroll-target="#differences-from-original-study">Differences from Original Study</a></li>
+  <li><a href="#reliability-and-validity" id="toc-reliability-and-validity" class="nav-link" data-scroll-target="#reliability-and-validity">Reliability and Validity</a></li>
   <li><a href="#methods-addendum-post-data-collection" id="toc-methods-addendum-post-data-collection" class="nav-link" data-scroll-target="#methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
@@ -132,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 13, 2025</p>
+      <p class="date">October 24, 2025</p>
     </div>
   </div>
   
@@ -167,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>The challenges/opportunities for my learning in this replication project will include: 1) recreating the paper’s proposed (joint effort) model and two alternative (solitary/compensatory effort) models of the probability of joint success in <a href="https://github.com/kach/memo">Memo</a> (based on the authors’ pre-existing implementations in WebPPL), and 2) running these models over my newly collected data to attempt to replicate that the proposed model is most predictive of participants’ judgments. (I will also replace the original authors’ data-saving step (a php page) with <a href="https://pipe.jspsych.org/">DataPipe</a>.)</p>
-<p>Specifically, I will attempt to replicate that A) when rounds 1 and 2 feature no individual success, participants still judge the probability of joint success in round 3 as non-zero. In addition, I will attempt to qualitatively replicate that B) participants judge higher probability of joint success as cases of individual success increases, and that the proposed model is the only model evaluated which predicts both patterns A and B (see original paper’s Figure 3C and accompanying explanation, pp.&nbsp;1570-1571; I will recreate that figure and attempt to replicate that explanation on my own data). I will also estimate and statistically test the difference in the probability judgments plotted in Figure 3C between the original data and my new data.</p>
+<p>Specifically, I will attempt to replicate that A) when rounds 1 and 2 feature no individual success, participants still judge the probability of joint success in round 3 as non-zero. In addition to this confirmatory analysis, I will attempt to qualitatively replicate that B) participants judge higher probability of joint success as cases of individual success increases, and that the proposed model is the only model evaluated which predicts both patterns A and B. See Analysis Plan below for more details.</p>
 <!--
 the measure of interest: judged round 3 (joint success) probability ("participants believed that the lift probability for “F,F;F,F” was different from zero")
 
@@ -198,32 +199,57 @@ Original paper: <a href="../original_paper/2023_xiang_effort.pdf">2023_xiang_eff
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <section id="power-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="power-analysis">Power Analysis</h3>
-<p>Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size.</p>
+<p>…Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size…</p>
 </section>
 <section id="planned-sample" class="level3">
 <h3 class="anchored" data-anchor-id="planned-sample">Planned Sample</h3>
-<p>Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.</p>
+<p>Just as the prior study used 50 participants, given that the key effect of interest appeared robust (in Figure 3C, CI for the data from scenario “F,F;F,F” is quite far from the line LiftProbability=0), I will collect 50 participants on Prolific, following the specific self-exclusion strategy reported below.</p>
+<p>I will follow precisely the data collection strategy in the original Experiment 1, as described on p.&nbsp;1569:</p>
+<blockquote class="blockquote">
+<p>“Participants’ demographic information was not collected. Participants completed a comprehension check before they moved on to the experiment. They were not allowed to proceed until they answered all the comprehension check questions correctly. … To ensure data quality, we included two attention-check questions in the experiment. Participants who failed one attention check were warned immediately to pay closer attention. Participants who failed both attention checks were asked to leave the experiment and they were not counted among the 50 participants we recruited. A total of 10 participants failed one attention check, and we did not exclude their data in our analysis.”</p>
+</blockquote>
 </section>
 <section id="materials" class="level3">
 <h3 class="anchored" data-anchor-id="materials">Materials</h3>
-<p>All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article.</p>
+<p>I will follow precisely the original Experiment 1. The materials for the experiment are available at <a href="https://github.com/jczimm/competence_effort/tree/ae3bc18bca694806174df7b42acb3d944b56f2aa">https://github.com/jczimm/competence_effort</a>. This repository is a clone of the authors’ <a href="https://github.com/yyyxiang/competence_effort/tree/ea2059499fa4398484d45184113ca2f7607545e5">own code repository</a> for the paper, with the experimental task code copied from the authors’ hosted version linked in their <code>README.md</code> file.</p>
+<p>See Procedure below for more details and a figure from the paper visualizing the task.</p>
 </section>
 <section id="procedure" class="level3">
 <h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
-<p>Can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article.</p>
+<p>I will follow precisely the original Experiment 1, as described on pp.&nbsp;1569-1570:</p>
+<blockquote class="blockquote">
+<p>“Participants observed six contests between different pairs of contestants (see Table 2 for a description of the contests; the order was randomized). In each contest, the contestants were given three attempts to lift a box, corresponding to three rounds. In the first two rounds, the contestants tried lifting the box themselves. The reward for lifting the box was $10 in Round 1 and $20 in Round 2. In the third round of each contest, the two contestants tried to lift thebox together for a reward of $20 each. Participants first saw the lift outcome of Round 1 and made strength judgments (1–10; 1 means extremely weak and 10 means extremely strong) and effort judgments (0%–100%) for each contestant. For Rounds 2 and 3, they predicted the probability of the contestants lifting the box (0%–100%) before seeing the outcome, then observed the actual outcome and made strength and effort judgments. Note that participants made effort judgments only when the outcome was Lift. Participants were informed that the weight of the box was always the same and equivalent to a strength of 5 (i.e., an average contestant with strength 5 exerting all of their efforts would be able to lift the box). Participants also saw a table of all the previous outcomes when making their guesses. Figure 2 shows an illustration of the task.” <img src="./table2.png" height="350" alt="Table 2"> <img src="./figure2.png" class="img-fluid" alt="Figure 2"></p>
+</blockquote>
+<p>To summarise: there are six contests, each with three rounds, and multiple judgments during each round.</p>
+<p>I will follow precisely the compensation scheme as described on p.&nbsp;1569:</p>
+<blockquote class="blockquote">
+<p>“Participants received a base pay of $2 and a potential bonus payment of up to $1. The amount of bonus they received was equal to the probability they put on the realized lift outcome on a randomly picked round. … participants provided informed consent prior to the experiment.”</p>
+</blockquote>
+<p>Given the federal minimum wage (<a href="https://www.dol.gov/general/topic/wages/minimumwage">$7.25</a>), for a base pay of $2, the median duration of the procedure was presumably around 16 minutes (≈ $2/$7.25*60 minutes).</p>
 </section>
 <section id="analysis-plan" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h3>
-<p>Can also quote directly, though it is less often spelled out effectively for an analysis strategy section. The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.</p>
-<p><strong>Clarify key analysis of interest here</strong> You can also pre-specify additional analyses you plan to do.</p>
+<p>I will conduct a one-sample <em>t</em> test on the participants’ reported round-3 lift probability for scenario “F,F;F,F” (i.e., each contestant failed to lift the box in both rounds 2 and 3), with the null hypothesis that the true lift probability is zero. See Planned Sample for the data exclusion rule.</p>
+<p>In addition to this confirmatory analysis, I will attempt to replicate the qualitative pattern that participants judge higher probability of joint success as cases of individual success increases. I will also reimplement their proposed model (joint effort) and alternative models (solitary effort and compensatory effort) in memo (see Differences from Original Study) and attempt to replicate that the proposed model is the only model evaluated which predicts both the qualitative pattern and the other result (that participants estimate round-3 lift probability as non-zero after two rounds of failures). See original paper’s Figure 3C and accompanying explanation, pp.&nbsp;1570-1571; I will recreate that figure and attempt to replicate that explanation on my own data. Further, I will also estimate and statistically test the difference in the probability judgments plotted in Figure 3C between the original data and my new data.</p>
+<p>I must note that while the <em>t</em> test alone does not justify the paper’s central claim that the joint effort model is qualitatively predictive, in the absence one such statistical test, this <em>t</em> test is a good alternative: this test demonstrates one of two key behavioral effects (p.&nbsp;1570) which the model was qualitatively evaluated to predict. (In other words, I should attempt to replicate this behavioral effect before I could try to qualitatively replicate that the joint effort model is the only considered model which can predict it.)</p>
 </section>
 <section id="differences-from-original-study" class="level3">
 <h3 class="anchored" data-anchor-id="differences-from-original-study">Differences from Original Study</h3>
-<p>Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study. The goal, of course, is to minimize those differences, but differences will inevitably occur. Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.</p>
+<p>The sample will differ in that the original was from Amazon Mechanical Turk, while the new sample will be from Prolific.</p>
+<p>The only difference in setting is that the task will be hosted at <code>https://jczimm.com/competence_effort/index1.html</code> rather than <code>https://gershmanlab.com/experiments/yang/toc/Experiment/index1.html</code>.</p>
+<p>The only known visible differences in procedure are that “HIT” will be renamed “submission” in task instructions, and the consent form will be updated according to the details provided by the UCSD course PSYC 201A.</p>
+<p>While the confirmatory analysis will be rerun using the original R code provided by the authors, for the qualitative replication attempt I will use a reimplementation of the joint effort model and the alternative models (solitary effort and compensatory effort models) in memo, which were originally written in WebPPL. I expect that reimplementation of the continuous probabilistic models in WebPPL as discrete probabilistic models in memo will produce higher estimate precision as the model predictions will be deterministic, rather than stochastic. (I will discretize the distribution at a high resolution such that there is no systematic difference in estimates.)</p>
+<p>I do not anticipate that these differences are meaningful regarding the original paper’s claims and the analyses of interest.</p>
+</section>
+<section id="reliability-and-validity" class="level3">
+<h3 class="anchored" data-anchor-id="reliability-and-validity">Reliability and Validity</h3>
+<p>The key measure is the participant’s report of the probability of the contestants successfully lifting the box in round 3. For this measure, the latent construct of interest is the participant’s <em>internal</em> estimate of lift probability.</p>
+<p>The reliability of this measure is unclear, given a lack of referenced evidence of the reliability of an explicit probability judgment. However, in the current model of the participant’s judgment as Bayesian inference, I infer that the reliability is negatively correlated with the noisiness of the participant’s internal translation from implicit posterior distribution (over lift probability) to explicit report; in other words, this measure can be no more reliable than the reliability of participants’ own estimation of the expected value of their internal posterior distribution. As there may also be individual differences in the noisiness of this translation process reliability could be reduced by this.</p>
+<p>Likewise, validity is unclear. And following the same logic, I infer that the validity may vary across participants, given that there could be individual differences in the accuracy of participations’ estimation of the expected value of their internal posterior distribution.</p>
 </section>
 <section id="methods-addendum-post-data-collection" class="level3">
 <h3 class="anchored" data-anchor-id="methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</h3>
-<p>You can comment this section out prior to final report with data collection.</p>
+<!-- You can comment this section out prior to final report with data collection. -->
 <section id="actual-sample" class="level4">
 <h4 class="anchored" data-anchor-id="actual-sample">Actual Sample</h4>
 <p>Sample size, demographics, data exclusions based on rules spelled out in analysis plan</p>
@@ -238,16 +264,50 @@ Original paper: <a href="../original_paper/2023_xiang_effort.pdf">2023_xiang_eff
 <h2 class="anchored" data-anchor-id="results">Results</h2>
 <section id="data-preparation" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation">Data preparation</h3>
-<p>Data preparation following the analysis plan.</p>
+<p>The data collected in this experiment will include task-level data:</p>
+<ul>
+<li><code>subjectId</code>, <code>prolificId</code></li>
+<li>pre-set round outcomes (<code>round1_o</code>, <code>round2_o</code>, <code>round3_o</code>)</li>
+<li>pre-set round incentives (<code>round1_reward</code>, <code>round2_reward</code>, <code>round3_reward</code>)</li>
+<li>number of failed attention checks (<code>attention_sum</code>)</li>
+</ul>
+<p>It will also include round-level data:</p>
+<ul>
+<li>contest index (<code>contest</code>)</li>
+<li>round index (<code>round</code>)</li>
+<li>strength (<code>r1_strength_a</code>/<code>r2_strength_a</code>/<code>r3_strength_a</code>, and <code>r1_strength_b</code>/<code>r2_strength_b</code>/<code>r3_strength_b</code>)</li>
+<li>effort (<code>r1_effort_a</code>/<code>r2_effort_a</code>/<code>r3_effort_a</code>, and <code>r1_effort_b</code>/<code>r2_effort_b</code>/<code>r3_effort_b</code>)</li>
+<li>outcomes (<code>r1_outcome_a</code>/<code>r2_outcome_a</code>/<code>r3_outcome_a</code>, and <code>r1_outcome_b</code>/<code>r2_outcome_b</code>/<code>r3_outcome_b</code>)</li>
+<li>probability (<code>r1_prob_a</code>/<code>r2_prob_a</code>/<code>r3_prob_a</code>, and <code>r1_prob_b</code>/<code>r2_prob_b</code>/<code>r3_prob_b</code>)</li>
+</ul>
+<p>The participant self-exclusion criterion will be enforced: we will manually exclude any participants who failed both attention checks but did not self-exclude (i.e., exit the task and return the submission).</p>
 </section>
 <section id="confirmatory-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="confirmatory-analysis">Confirmatory analysis</h3>
-<p>The analyses as specified in the analysis plan.</p>
-<p><em>Side-by-side graph with original graph is ideal here</em></p>
+<p>I found/did not find that participants rated the probability of joint success in round 3 as non-zero (<em>t</em>(49) = …, <em>p</em> = …). See the black point range (data) for scenario “F,F;F,F”.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Original (Figure 3C)</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="./figure3c-legend.png" class="img-fluid"><br><img src="./figure3c.png" class="img-fluid" alt="Figure 3C"><br>“Note. … Model simulations averaged over 10 runs. Error bars indicate bootstrapped 95% confidence intervals.” (p.&nbsp;1571)</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="exploratory-analyses" class="level3">
 <h3 class="anchored" data-anchor-id="exploratory-analyses">Exploratory analyses</h3>
 <p>Any follow-up analyses desired (not required).</p>
+<!-- I found/did not find that the joint effort model was the only model which qualitatively predicted both [the result in confirmatory analysis] and [the other result]. -->
 </section>
 </section>
 <section id="discussion" class="level2">
